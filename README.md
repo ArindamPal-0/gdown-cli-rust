@@ -21,14 +21,14 @@ Make sure that the drive scope are as follows:
 - https://www.googleapis.com/auth/drive.metadata.readonly (View metadata for files in your Drive.)
 - https://www.googleapis.com/auth/drive.readonly (View and download all your Drive files.)
 
-With the use of `credentials.json` generate jwt bearer token using the NodeJS package [node-gtoken](https://github.com/googleapis/node-gtoken), and add the generated token in `.env` file as name `BEARER_TOKEN`. Also make sure to add the above drive scopes while generating the bearer token.
+Just put the `credentials.json` file in the project root and the bearer token will be automatically fetched from the google auth server, and it will be used for further requests.
 
 After that add the google drive file id you want to download into the `file_id` variable in `main.rs` file. Then you can run the application to download the file.
 
 ## Todo
 
 - [x] connect to google drive api
-- [ ] auth using service account
+- [x] auth using service account
 - [ ] auth using oauth
 - [x] get file details from file id
 - [x] download a file
